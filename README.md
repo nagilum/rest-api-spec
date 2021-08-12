@@ -40,25 +40,25 @@ The following requests will return `200 Ok` with a body:
 Getting a single product will return the complete entity, while getting all products will return a mixed content like so:
 ```json
 {
-	"data": [
-		{
-			"id": 1
-		},
-		{
-			"id": 2
-		}
-	],
-	"items": {
-		"perPage": 1000,
-		"returned": 2,
-		"total": 5005
-	},
-	"links": {
-		"firstPage": "https://api.dev/api/product",
-		"lastPage": "https://api.dev/api/product?skip=5000",
-		"nextPage": "https://api.dev/api/product?skip=1000",
-		"prevPage": null
-	}
+    "data": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        }
+    ],
+    "items": {
+        "perPage": 1000,
+        "returned": 2,
+        "total": 5005
+    },
+    "links": {
+        "firstPage": "https://api.dev/api/product",
+        "lastPage": "https://api.dev/api/product?skip=5000",
+        "nextPage": "https://api.dev/api/product?skip=1000",
+        "prevPage": null
+    }
 }
 ```
 
@@ -70,10 +70,10 @@ How we return an error is important. I like to use the HTTP status code to indic
 400, and sometimes 404, needs more details. I've become a fan of the following structure for an Bad Request error payload:
 ```json
 {
-	"code": "/errors/missing-argument",
-	"message": "Missing argument 'FirstName'.",
-	"detail": "The argument 'FirstName' is missing from the request body.",
-	"traceId": "cefaa0cf-0539-4db6-8b65-0a857079882c"
+    "code": "/errors/missing-argument",
+    "message": "Missing argument 'FirstName'.",
+    "detail": "The argument 'FirstName' is missing from the request body.",
+    "traceId": "cefaa0cf-0539-4db6-8b65-0a857079882c"
 }
 ```
 
